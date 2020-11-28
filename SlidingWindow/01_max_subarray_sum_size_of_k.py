@@ -1,3 +1,8 @@
+"""
+Given an array of positive numbers and a positive number ‘k’, 
+find the maximum sum of any contiguous subarray of size ‘k’.
+"""
+
 def max_sum_subarray_size_k(arr: list, k: int):
     res = float('-inf')
     _sum = 0
