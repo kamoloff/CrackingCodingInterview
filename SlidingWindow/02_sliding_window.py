@@ -2,11 +2,12 @@
 Given an array, find the average of all contiguous subarrays of size ‘K’ in it.
 """
 
+
 def average_k(arr: list, k: int) -> list:
     s = sum(arr[:k])
-    res = [s/k]
+    res = [s / k]
     for i in range(k, len(arr)):
-        s += arr[i] - arr[i-k]
+        s += arr[i] - arr[i - k]
         res.append(s / k)
     return res
 

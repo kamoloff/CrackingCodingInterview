@@ -11,24 +11,24 @@ you will stop when you have to pick from a third fruit type.
 
 
 def fruits_into_baskets(fruits: list):
-    baskets =  {}
+    baskets = {}
     start, result = 0, 0
 
     for i, c in enumerate(fruits):
         baskets[c] = baskets.get(c, 0) + 1
-        
+
         while len(baskets) > 2:
             start_char = fruits[start]
             baskets[start_char] -= 1
             start += 1
             if baskets[start_char] == 0:
                 del baskets[start_char]
-                
-        result = max(i-start + 1, result)
+
+        result = max(i - start + 1, result)
 
     return result
+
 
 if __name__ == '__main__':
     print(fruits_into_baskets(['A', 'B', 'C', 'A', 'C']))
     print(fruits_into_baskets(['A', 'B', 'C', 'B', 'B', 'C']))
-
